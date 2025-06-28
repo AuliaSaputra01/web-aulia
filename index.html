@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jasa Joki Tugas Online</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #00b894;
+      --bg: #f9f9f9;
+      --text: #1e272e;
+      --card: #ffffff;
+    }
+    [data-theme="dark"] {
+      --primary: #00cec9;
+      --bg: #1e272e;
+      --text: #f9f9f9;
+      --card: #2d3436;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+      background-image: url('green-chameleon-s9CC2SKySJM-unsplash-scaled.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 2em 1em;
+      text-align: center;
+      position: relative;
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      background: white;
+      color: var(--primary);
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    nav {
+      background-color: #2d3436;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0.8em;
+    }
+    nav a {
+      color: white;
+      margin: 0.5em 1em;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #dfe6e9;
+    }
+    main {
+      padding: 2em 10%;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section {
+      background-color: var(--card);
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2em;
+      transition: background-color 0.3s;
+    }
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+    ul {
+      padding-left: 1.5em;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1em;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #019875;
+    }
+    #preview-box {
+      display: none;
+      background-color: #ecf0f1;
+      border-left: 4px solid var(--primary);
+      padding: 1em;
+      border-radius: 8px;
+      white-space: pre-line;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      margin-top: 1em;
+      font-family: monospace;
+      color: var(--text);
+    }
+    [data-theme="dark"] #preview-box {
+      background-color: #3a3a3a;
+      color: #f9f9f9;
+    }
+    #loading {
+      display: none;
+      margin-top: 1em;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    footer {
+      background-color: #2d3436;
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+    }
+    @media (max-width: 768px) {
+      main {
+        padding: 1em;
+      }
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .theme-toggle {
+        top: 0.5em;
+        right: 0.5em;
+        padding: 0.3em 0.8em;
+      }
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <div style="position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: -1;"></div>
+  <header>
+    <h1><i class="fa-solid fa-graduation-cap"></i> Jasa Joki Tugas</h1>
+    <p>Kami siap bantu tugasmu dengan cepat dan profesional!</p>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+  </header>
+  <nav>
+    <a href="#layanan"><i class="fa-solid fa-list-check"></i> Layanan</a>
+    <a href="#harga"><i class="fa-solid fa-tags"></i> Harga</a>
+    <a href="#kontak"><i class="fa-solid fa-phone"></i> Kontak</a>
+    <a href="#pesan"><i class="fa-solid fa-paper-plane"></i> Pesan</a>
+  </nav>
+  <main>
+    <section id="layanan">
+      <h2><i class="fa-solid fa-check-circle"></i> Layanan Kami</h2>
+      <ul>
+        <li>Joki tugas sekolah (SMP/SMA): esai, resume, laporan</li>
+        <li>Joki tugas kuliah: makalah, PPT, desain</li>
+        <li>Desain presentasi Canva & infografis</li>
+      </ul>
+    </section>
+    <section id="harga">
+      <h2><i class="fa-solid fa-coins"></i> Harga</h2>
+      <ul>
+        <li>Ringan: Rp 10.000 - 25.000</li>
+        <li>Sedang: Rp 30.000 - 50.000</li>
+        <li>Sulit / Mendesak: mulai Rp 60.000</li>
+      </ul>
+    </section>
+    <section id="kontak">
+      <h2><i class="fa-solid fa-address-book"></i> Kontak</h2>
+      <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/6282276427953" target="_blank">0822-7642-7953</a></p>
+      <p><i class="fa-solid fa-envelope"></i> Email: auliasaputr410@email.com</p>
+      <p><i class="fa-solid fa-location-dot"></i> Lokasi: Online - Seluruh Indonesia 🇮🇩</p>
+    </section>
+    <section id="pesan">
+      <h2><i class="fa-solid fa-paper-plane"></i> Form Pemesanan</h2>
+      <form id="jokiForm">
+        <label>Nama:</label>
+        <input type="text" id="nama" required>
+        <label>Jenis Tugas:</label>
+        <input type="text" id="tugas" required placeholder="Contoh: Makalah, PPT">
+        <label>Deadline:</label>
+        <input type="date" id="deadline" required>
+        <label>Deskripsi:</label>
+        <textarea id="deskripsi" rows="4" required placeholder="Contoh: Tugas tentang pengaruh globalisasi terhadap budaya lokal, diketik di Word, 3 halaman."></textarea>
+        <button type="button" class="btn" onclick="previewPesan()">📄 Lihat Pesan</button>
+        <div id="preview-box"></div>
+        <div id="loading"><i class="fa-solid fa-spinner fa-spin"></i> Mengirim ke WhatsApp...</div>
+        <button id="kirimWA" type="button" class="btn" style="display:none;" onclick="kirimWhatsApp()">📤 Kirim ke WhatsApp</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Jasa Joki Tugas. Dibuat dengan ❤️ oleh Aulia Saputra</p>
+  </footer>
+  <script>
+    let pesanWA = "";
+    function previewPesan() {
+      const nama = document.getElementById('nama').value;
+      const tugas = document.getElementById('tugas').value;
+      const deadline = document.getElementById('deadline').value;
+      const deskripsi = document.getElementById('deskripsi').value;
+      if (!nama || !tugas || !deadline || !deskripsi) {
+        alert("Harap lengkapi semua data!");
+        return;
+      }
+      pesanWA = `Halo kak, saya mau order jasa joki tugas 🙏\n\n🧑 Nama: ${nama}\n📚 Jenis Tugas: ${tugas}\n🕒 Deadline: ${deadline}\n📝 Deskripsi:\n${deskripsi}`;
+      document.getElementById('preview-box').style.display = "block";
+      document.getElementById('preview-box').innerText = pesanWA;
+      document.getElementById('kirimWA').style.display = "inline-block";
+    }
+    function kirimWhatsApp() {
+      document.getElementById('loading').style.display = 'block';
+      setTimeout(() => {
+        const encoded = encodeURIComponent(pesanWA);
+        window.open(`https://wa.me/6282276427953?text=${encoded}`, '_blank');
+        document.getElementById('loading').style.display = 'none';
+      }, 1500);
+    }
+    function toggleTheme() {
+      const body = document.body;
+      const isDark = body.getAttribute("data-theme") === "dark";
+      body.setAttribute("data-theme", isDark ? "light" : "dark");
+      document.querySelector('.theme-toggle').innerText = isDark ? "🌙 Dark Mode" : "☀️ Light Mode";
+    }
+  </script>
+</body>
+</html>
